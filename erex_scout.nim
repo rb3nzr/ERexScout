@@ -25,7 +25,8 @@ proc main(
     quit(0)
 
   if pid == 0 and path == "":
-    styledEcho styleBright,bgYellow,fgBlack,"[!] Either -p/--pid or -f/--path is required"
+    styledEcho styleBright,bgYellow,fgBlack,"[!] Either -p/--pid or -d/--path is required"
+    styledEcho styleBright,fgGreen,"[>] -h for full options"
     quit(0)
   if userRex == "" and rexGroup == "":
     styledEcho styleBright,bgYellow,fgBlack,"[!] One of -u/--user-rex or -r/--rex-group is required"
@@ -40,6 +41,7 @@ proc main(
     rexes.add(("user_regex", re(userRex)))
 
   if pid != 0:
+    styledEcho styleBright,bgYellow,fgBlack,"[>] Scanning.."
     let procRes: seq[JsonNode] = scanProcessMemory(pid, rexes, entropy, threshold)
     if outputPath != "":
       let mode = if fileExists(outputPath): fmAppend else: fmWrite 
@@ -54,6 +56,7 @@ proc main(
   
   if path != "":
     if dirExists(path):
+      styledEcho styleBright,bgYellow,fgBlack,"[>] Scanning.."
       var fileRes: seq[JsonNode]
       if recurse:
         fileRes = scanFilesRec(path, rexes, entropy, threshold, chunkSize)
