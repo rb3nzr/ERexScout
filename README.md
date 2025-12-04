@@ -8,10 +8,12 @@ Cross platform CLI tool to scan process memory and files.
 Built as a learning excersise. The regex matching needs work.
 
 # Compile & Usage
+```text
 nimble install cligen regex winim ptrace
-
+```
+```text
 nim c -d:release erex_scout.nim
-
+```
 ```text
 Options:
   -h, --help                          print this cligen-erated help
