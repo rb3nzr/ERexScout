@@ -1,9 +1,9 @@
 # About
 CLI tool to scan process memory and files.
 
-Finds matches based on a given regular expression or set of them (add those to core/rexes.nim).
-Finds high entropy regions based on the set threshold.
-Produces extra information (per region, file, etc.) and exports as JSON.
+- Finds matches based on a given regular expression or set of them (add those to core/rexes.nim).
+- Finds high entropy regions based on the set threshold.
+- Produces extra information (per region, file, etc.) and exports as JSON.
 
 Built as a learning excersise. The regex matching needs work.
 
