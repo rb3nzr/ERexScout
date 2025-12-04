@@ -9,6 +9,7 @@ Built as a learning excersise. The regex matching needs work.
 
 # Compile & Usage
 nimble install cligen regex winim ptrace
+
 nim c -d:release erex_scout.nim
 
 ```text
