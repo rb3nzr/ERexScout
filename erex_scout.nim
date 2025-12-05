@@ -29,7 +29,7 @@ proc main(
     styledEcho styleBright,fgGreen,"[>] -h for full options"
     quit(0)
   if userRex == "" and rexGroup == "":
-    styledEcho styleBright,bgYellow,fgBlack,"[!] One of -u/--user-rex or -r/--rex-group is required"
+    styledEcho styleBright,bgYellow,fgBlack,"[!] One of -u/--user-rex or -g/--rex-group is required"
     quit(0)
   
   var rexes: seq[tuple[label: string, pattern: Regex]] 
